@@ -56,4 +56,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Fancy styling
 gem 'bootstrap-sass'
-gem 'rake', '12.3.2'
+gem 'rake', '12.3.3'
