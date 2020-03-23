@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_with url: pallets_nextlocation_path, local: true, method: 'get' do |f| %>
+  <%= f.label :barcode, 'Barcode:' %>
+  <%= f.number_field :barcode %><br>
+  <%= f.label :next_location, 'Next Location:' %>
+  <%= f.select :next_location, $locations, {}, {:value => params[:next_location]} %><br>
+  <%= f.submit "Enter" %>
+<% end %>
