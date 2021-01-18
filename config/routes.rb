@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'pallets/scan'
   get 'pallets/nextlocation'
+  get 'pallets/costcenter'
+  get 'pallets/toggle'
+  get 'pallets/barcode'
   # get 'pallets/:id/nextlocation'
   resources :pallets
   # resources :pallets do

@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_with url: pallets_nextlocation_path, local: true, method: 'get' do |f| %>
+<%= form_with url: pallets_costcenter_path, local: true, method: 'get' do |f| %>
+  <%= f.label(:cost_center, 'Cost Center:') %>
+  <%= f.select(:cost_center, options_for_select(@cost_centers, $selected_cost_center), {}, {:value => params[:cost_center], id: :cost_center}) %>
+  <%= f.submit "Change" %>
+<% end %>
+
+<%= form_with url: pallets_barcode_path, local: true, method: 'get' do |f| %>
+  <%= f.label :truck, 'Going to:' %>
+  <%= f.text_field :truck, value: $selected_going_to %><br>
   <%= f.label :barcode, 'Barcode:' %>
-  <%= f.number_field :barcode %><br>
-  <%= f.label :next_location, 'Next Location:' %>
-  <%= f.select :next_location, $locations, {}, {:value => params[:next_location]} %><br>
-  <%= f.submit "Enter" %>
+  <%= f.number_field :barcode, autofocus: true %><br>
+  <%= f.submit "Submit" %>
 <% end %>
